@@ -18,8 +18,21 @@ class BST:
     def Inorder(self,node):
         if node is not None:
             self.Inorder(node.left)
-            print(node.data,end="->")
+            print(node.data,end=" ")
             self.Inorder(node.right)
+    def Preorder(self,node):
+        if node is not None:
+            print(node.data,end=" ")
+            self.Preorder(node.left)
+            self.Preorder(node.right)
+
+    def Postorder(self,node):
+        if node is not None:
+            self.Postorder(node.left)
+            self.Postorder(node.right)
+            print(node.data,end=" ")
+
+
 
 tree=BST()
 root=tree.create(8)
@@ -28,3 +41,9 @@ for i in range(a):
     tree.insert(root,int(input()))
 print("Inorder traversal of BST: ")
 tree.Inorder(root)
+print()
+print("Preorder traversal of BST: ")
+tree.Preorder(root)
+print()
+print("Postorder traversal of BST: ")
+tree.Postorder(root)
